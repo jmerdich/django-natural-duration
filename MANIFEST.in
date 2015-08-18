@@ -1,1 +1,3 @@
-include *.md *.ini
+include README.md
+include tox.ini
+include license
