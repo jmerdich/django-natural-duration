@@ -21,7 +21,7 @@ setup(
     install_requires=[
         'Django>=1.8,<1.9'
     ],
-    keywords = ['forms', 'timedelta', 'humanize']
+    keywords = ['forms', 'timedelta', 'humanize'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
