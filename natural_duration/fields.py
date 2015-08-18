@@ -60,7 +60,7 @@ class NaturalDurationField(Field):
         'invalid': _('Enter a valid duration.'),
     }
 
-    def __init__(self, human_values=False, *args, **kwargs):
+    def __init__(self, human_values=True, *args, **kwargs):
         self.human_values = human_values
         super(NaturalDurationField, self).__init__(*args, **kwargs)
 
