@@ -9,8 +9,9 @@ to the user in a similar manner.
  - Python 2.7, 3.4, or PyPy (should work with 3.3, but I haven't tested it)
 
 ## Usage
-1. Add `natural_duration` to your INSTALLED\_APPS
-2. Insert a field into a form somewhere
+Insert a `NaturalDurationField` into a form somewhere. The `human_values` kwarg  tells whether
+to render initial values in a nice, humanized fashion (2 days and 30 minutes) or the usual 
+django fashion (2 00:30:00). At no point is precision lost when resaved.
 
 ## Other Notes
 (c) Jake Merdich, 2015, released under New BSD license.
