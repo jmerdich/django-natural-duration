@@ -14,7 +14,9 @@ Usage
 -----
 Insert a `NaturalDurationField` into a form somewhere. The `human_values` kwarg  tells whether
 to render initial values in a nice, humanized fashion (2 days and 30 minutes) or the usual 
-django fashion (2 00:30:00). At no point is precision lost when resaved.
+django fashion (2 00:30:00). At no point is precision lost when resaved from human format
+(though you probably should look elsewhere if you care about microseconds and centuries
+at the same time).
 
 Other Notes
 -----------
