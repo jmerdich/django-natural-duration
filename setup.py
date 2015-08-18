@@ -16,17 +16,18 @@ setup(
     author='jmerdich',
     author_email='jake@merdich.com',
     url='https://github.com/jmerdich/django-natural-duration/',
-    download_url='https://github.com/jmerdich/django-natural-duration/tarball/0.1',
+    download_url='https://github.com/jmerdich/django-natural-duration/tarball/0.1',  # noqa
     license='New BSD',
     install_requires=[
         'Django>=1.8,<1.9'
     ],
-    keywords = ['forms', 'timedelta', 'humanize'],
+    keywords=['forms', 'timedelta', 'humanize'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 1.8',
         'Intended Audience :: Developers',
+
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
