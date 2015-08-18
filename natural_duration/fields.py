@@ -71,11 +71,10 @@ class NaturalDurationField(Field):
             value = 1
         else:
             try:
-                value = int(match.group(1))
+                value = int(string)
             except ValueError:
-                value = float(match.group(1))
+                value = float(string)
                 return timedelta(seconds=value * UNITS[unit].total_seconds())
-                # I did the math, int-us is bigger than most sql limits
         return value * UNITS[unit]
 
     def to_python(self, value):
