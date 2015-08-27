@@ -11,6 +11,10 @@ class NaturalDurationFieldTest(SimpleTestCase):
     f = NaturalDurationField()
     robo_f = NaturalDurationField(False)
     human_f = NaturalDurationField(True)
+    minute_f = NaturalDurationField(default_units='m')
+    hour_f = NatrualDurationField(default_units='hr')
+    second_f = NatrualDurationField(default_units='s')
+    half_minute_f = NaturalDurationField(default_units=timedelta(seconds=30))
 
     def introspect(self, delta):
         self.assertEquals(delta, self.f.to_python(
@@ -27,6 +31,32 @@ class NaturalDurationFieldTest(SimpleTestCase):
         base = timedelta(seconds=6, milliseconds=500)
         self.assertEquals(base, self.f.to_python("6.5 seconds"))
         # decimals implemented as float of seconds, so testing here
+        self.introspect(base)
+        
+    def test_decimal_units(self):
+        base = timedelta(seconds=45)
+        self.assertEquals(base, self.half_minute_f.to_python("1.5"))
+        self.introspect(base)
+        base = timedelta(hours=6, minutes=30)
+        self.assertEquals(base, self.hour_f.to_python("6.5"))
+        self.introspect(base)
+        base = timedelta(minutes=6, seconds=30)
+        self.assertEquals(base, self.minute_f.to_python("6.5"))
+        self.introspect(base)
+        base = timedelta(seconds=6, milliseconds=500)
+        self.assertEquals(base, self.second_f.to_python("6.5"))
+        # decimals implemented as float of seconds, so testing here
+        self.introspect(base)
+
+    def test_integer_units(self):
+        base = timedelta(seconds=60)
+        self.assertEquals(base, self.half_minute_f.to_python("2"))
+        self.introspect(base)
+        base = timedelta(hours=6)
+        self.assertEquals(base, self.hour_f.to_python("6"))
+        self.introspect(base)
+        base = timedelta(minutes=6)
+        self.assertEquals(base, self.minute_f.to_python("6"))
         self.introspect(base)
 
     def test_bad_input(self):
