@@ -32,7 +32,7 @@ class NaturalDurationFieldTest(SimpleTestCase):
         self.assertEquals(base, self.f.to_python("6.5 seconds"))
         # decimals implemented as float of seconds, so testing here
         self.introspect(base)
-        
+
     def test_decimal_units(self):
         base = timedelta(seconds=45)
         self.assertEquals(base, self.half_minute_f.to_python("1.5"))
