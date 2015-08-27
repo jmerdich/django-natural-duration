@@ -70,7 +70,7 @@ class NaturalDurationField(Field):
             self.default_units = UNITS[default_units]
         elif default_units:
             raise RuntimeError("Got an invalid default duration unit %s" % default_units)
-        else
+        else:
             self.default_units = None
         super(NaturalDurationField, self).__init__(*args, **kwargs)
 
