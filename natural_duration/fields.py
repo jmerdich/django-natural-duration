@@ -60,8 +60,18 @@ class NaturalDurationField(Field):
         'invalid': _('Enter a valid duration.'),
     }
 
-    def __init__(self, human_values=True, *args, **kwargs):
+    def __init__(self, human_values=True, default_units=None, *args, **kwargs):
         self.human_values = human_values
+        if isinstance(default_units, timedelta):
+            self.default_units = default_units
+        elif default_units == 'm':  # the only one in UNITS that's actually a regex
+            self.default_units = MINUTE
+        elif default_units in UNITS:
+            self.default_units = UNITS[default_units]
+        elif default_units:
+            raise RuntimeError("Got an invalid default duration unit %s" % default_units)
+        else
+            self.default_units = None
         super(NaturalDurationField, self).__init__(*args, **kwargs)
 
     def to_td(self, match, unit):
@@ -85,6 +95,17 @@ class NaturalDurationField(Field):
         value = value.strip()
         if not value:
             return None  # handle values like " "
+        if self.default_units:
+            try:
+                intvalue = int(value)
+                return self.default_units * intvalue
+            except ValueError:
+                pass
+            try:
+                floatvalue = float(value)
+                return timedelta(seconds=value * self.default_units.total_seconds())
+            except ValueError:
+                pass
         td = parse_duration(value)
         if td is not None:
             return td
