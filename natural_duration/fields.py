@@ -64,12 +64,14 @@ class NaturalDurationField(Field):
         self.human_values = human_values
         if isinstance(default_units, timedelta):
             self.default_units = default_units
-        elif default_units == 'm':  # the only one in UNITS that's actually a regex
+        elif default_units == 'm':  # the only one in UNITS that's a regex
             self.default_units = MINUTE
         elif default_units in UNITS:
             self.default_units = UNITS[default_units]
         elif default_units:
-            raise RuntimeError("Got an invalid default duration unit %s" % default_units)
+            raise RuntimeError(
+                "Got an invalid default duration unit %s" % default_units
+                )
         else:
             self.default_units = None
         super(NaturalDurationField, self).__init__(*args, **kwargs)
@@ -103,7 +105,9 @@ class NaturalDurationField(Field):
                 pass
             try:
                 floatvalue = float(value)
-                return timedelta(seconds=floatvalue * self.default_units.total_seconds())
+                return timedelta(
+                    seconds=floatvalue * self.default_units.total_seconds()
+                    )
             except ValueError:
                 pass
         td = parse_duration(value)
