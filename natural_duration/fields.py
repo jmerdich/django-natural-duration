@@ -103,7 +103,7 @@ class NaturalDurationField(Field):
                 pass
             try:
                 floatvalue = float(value)
-                return timedelta(seconds=value * self.default_units.total_seconds())
+                return timedelta(seconds=floatvalue * self.default_units.total_seconds())
             except ValueError:
                 pass
         td = parse_duration(value)
