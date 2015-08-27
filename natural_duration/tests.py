@@ -12,8 +12,8 @@ class NaturalDurationFieldTest(SimpleTestCase):
     robo_f = NaturalDurationField(False)
     human_f = NaturalDurationField(True)
     minute_f = NaturalDurationField(default_units='m')
-    hour_f = NatrualDurationField(default_units='hr')
-    second_f = NatrualDurationField(default_units='s')
+    hour_f = NaturalDurationField(default_units='hr')
+    second_f = NaturalDurationField(default_units='s')
     half_minute_f = NaturalDurationField(default_units=timedelta(seconds=30))
 
     def introspect(self, delta):
