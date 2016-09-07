@@ -59,6 +59,7 @@ class NaturalDurationField(Field):
     default_error_messages = {
         'invalid': _('Enter a valid duration.'),
     }
+    help_text = _("e.g. '1 hr and 2 milliseconds', '5 minutes, 30 sec', etc")
 
     def __init__(self, human_values=True, default_units=None, *args, **kwargs):
         self.human_values = human_values
