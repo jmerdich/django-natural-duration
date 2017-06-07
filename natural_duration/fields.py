@@ -80,8 +80,8 @@ class NaturalDurationField(Field):
             self.default_units = None
         super(NaturalDurationField, self).__init__(*args, **kwargs)
 
-    def to_td(self, match, unit):
-        value = 0
+    @staticmethod
+    def to_td(match, unit):
         string = match.group(1)
         if 'a' in string:
             value = 1
@@ -103,14 +103,14 @@ class NaturalDurationField(Field):
             return None  # handle values like " "
         if self.default_units:
             try:
-                intvalue = int(value)
-                return self.default_units * intvalue
+                int_value = int(value)
+                return self.default_units * int_value
             except ValueError:
                 pass
             try:
-                floatvalue = float(value)
+                float_value = float(value)
                 return timedelta(
-                    seconds=floatvalue * self.default_units.total_seconds()
+                    seconds=float_value * self.default_units.total_seconds()
                     )
             except ValueError:
                 pass
@@ -147,6 +147,6 @@ class NaturalDurationField(Field):
         if not self.human_values:
             return duration_string(value)
         elif value == timedelta():
-            return "a moment"
+            return _("a moment")
         else:
             return human_duration_string(value)

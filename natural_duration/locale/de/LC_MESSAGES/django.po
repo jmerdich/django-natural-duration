@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-07 16:27+0200\n"
+"PO-Revision-Date: 2017-06-07 16:51+0100\n"
+"Last-Translator: b'Andy Grabow <andy@freilandkiwis.de>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: natural_duration/fields.py:63
+msgid "Enter a valid duration."
+msgstr "Gib eine gültige Zeitspanne ein."
+
+#: natural_duration/fields.py:65
+msgid "e.g. '1 hr and 2 milliseconds', '5 minutes, 30 sec', etc"
+msgstr "z.B.: \"1h 5min\" oder \"5min 30sec\""
+
+#: natural_duration/fields.py:150
+msgid "a moment"
+msgstr "zur selben Zeit"
+
+#: natural_duration/utils.py:11
+msgid "a year"
+msgstr "ein Jahr"
+
+#: natural_duration/utils.py:11
+msgid "years"
+msgstr "Jahre"
+
+#: natural_duration/utils.py:12
+#| msgid "a moment"
+msgid "a month"
+msgstr "ein Monat"
+
+#: natural_duration/utils.py:12
+#| msgid "a moment"
+msgid "months"
+msgstr "Monate"
+
+#: natural_duration/utils.py:13
+msgid "a week"
+msgstr "eine Woche"
+
+#: natural_duration/utils.py:13
+msgid "weeks"
+msgstr "Wochen"
+
+#: natural_duration/utils.py:14
+msgid "a day"
+msgstr "ein Tag"
+
+#: natural_duration/utils.py:14
+msgid "days"
+msgstr "Tage"
+
+#: natural_duration/utils.py:15
+msgid "an hour"
+msgstr "eine Stunde"
+
+#: natural_duration/utils.py:15
+msgid "hours"
+msgstr "Stunden"
+
+#: natural_duration/utils.py:16
+msgid "a minute"
+msgstr "eine Minute"
+
+#: natural_duration/utils.py:16
+#| msgid "%d minutes"
+msgid "minutes"
+msgstr "Minuten"
+
+#: natural_duration/utils.py:17
+msgid "a second"
+msgstr "eine Sekunde"
+
+#: natural_duration/utils.py:17
+msgid "seconds"
+msgstr "Sekunden"
+
+#: natural_duration/utils.py:18
+msgid "a millisecond"
+msgstr "eine Millisekunde"
+
+#: natural_duration/utils.py:18
+msgid "milliseconds"
+msgstr "Millisekunden"
+
+#: natural_duration/utils.py:19
+msgid "a microsecond"
+msgstr "eine Mikrosekunde"
+
+#: natural_duration/utils.py:19
+msgid "microseconds"
+msgstr "Mikrosekunden"
